@@ -5,7 +5,7 @@ RUN git clone --depth 1 https://github.com/BYVoid/OpenCC /src
 WORKDIR /src
 
 RUN apk add make cmake g++ doxygen
-RUN make -j6 python-dist
+RUN make -j python-dist
 
 WORKDIR /src/dist
 RUN mv $(ls) $(ls | sed 's,manylinux1,linux,g')
